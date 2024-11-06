@@ -1,47 +1,45 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import './navber.css'
+import "./navber.css";
 
 const Navber = () => {
-
-
   const links = (
     <>
       <li>
-        <NavLink to="/" exact activeClassName="active">
+        <NavLink to="/"  className={({ isActive }) => (isActive ? "active" : "")}>
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to="/about" activeClassName="active">
-        About
+        <NavLink to="/about" className={({ isActive }) => (isActive ? "active" : "")}>
+          About
         </NavLink>
       </li>
       <li>
-        <NavLink to="/portfolio" activeClassName="active">
-        Portfolio
+        <NavLink to="/portfolio" className={({ isActive }) => (isActive ? "active" : "")}>
+          Portfolio
         </NavLink>
       </li>
       <li>
-        <NavLink to="/clients" activeClassName="active">
-        Clients
+        <NavLink to="/clients" className={({ isActive }) => (isActive ? "active" : "")}>
+          Clients
         </NavLink>
       </li>
       <li>
-        <NavLink to="/blog" activeClassName="active">
-        Blog
+        <NavLink to="/blog" className={({ isActive }) => (isActive ? "active" : "")}>
+          Blog
         </NavLink>
       </li>
       <li>
-        <NavLink to="/contact" activeClassName="active">
-        Contact
+        <NavLink to="/contact" className={({ isActive }) => (isActive ? "active" : "")}>
+          Contact
         </NavLink>
       </li>
     </>
   );
 
   return (
-    <div className="navbar  px-12 absolute  ">
+    <div className="navbar  absolute  z-20 ">
       <div className="navbar-start">
         <Link to="/">
           <img
@@ -53,17 +51,17 @@ const Navber = () => {
         <h2 className="text-3xl ml-2 text-white font-semibold">Restaurant</h2>
 
         <div className="ml-20 hidden lg:flex">
-          <ul className=" flex px-1 text-lg  gap-4 text-white">
-            {links}
-          </ul>
+          <ul className=" flex px-1 text-lg  gap-4 text-white">{links}</ul>
         </div>
       </div>
 
       <div className="navbar-end gap-2 ">
         <div className="hidden lg:flex">
-          <Link to='/bookATable' ><button className="btn bg-yellow-500 text-black outline-none border-none rounded-none uppercase text-lg">
-            Book a table
-          </button></Link>
+          <Link to="/bookATable">
+            <button className="btn bg-yellow-500 text-black outline-none border-none rounded-none uppercase text-lg">
+              Book a table
+            </button>
+          </Link>
         </div>
 
         <div className="dropdown dropdown-end">

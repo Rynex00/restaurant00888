@@ -31,7 +31,6 @@ const FoodItems = () => {
 
         <div className="order-first relative">
           <Swiper
-            onSliderFirstMove={true}
             spaceBetween={30}
             autoplay={{
               delay: 2500,

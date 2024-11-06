@@ -33,7 +33,6 @@ const CustomersSay = () => {
           <div className="order-first relative">
             <Swiper
               slidesPerView={1}
-              onSliderFirstMove={true}
               spaceBetween={30}
               autoplay={{
                 delay: 2500,
